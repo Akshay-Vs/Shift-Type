@@ -4,16 +4,18 @@ const Home = () => {
   return (
     <div className="flex flex-col text-white md:flex-row h-screen">
       <div className="flex-1 m-5 mt-36  md:m-16">
-        <h1 className="text-7xl font-light md:text-8xl">
+        <h1 className="text-7xl font-light md:text-8xl tracking-tight">
           Master the <br />
           <span>Keyboard with Lightning</span> Speed
         </h1>
-        <Link
-          href="#"
-          className="m-4 flex pt-56 text-4xl font-thin underline underline-offset-8 tracking-wider"
-        >
-          Welcome to Shiftype
-        </Link>
+        <div className="pt-72">
+          <Link
+            href="#"
+            className="m-4 flex text-4xl font-thin underline underline-offset-8 tracking-wider"
+          >
+            Welcome to Shiftype
+          </Link>
+        </div>
       </div>
       <div className="flex-2 p-10 mr-12">
         <Button text="Start Typing" />
