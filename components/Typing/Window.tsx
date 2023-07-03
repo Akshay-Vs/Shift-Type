@@ -6,9 +6,12 @@ import { calculateWPM } from "@/lib/calculateWpm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Confetti from "react-confetti";
+import ShowConfetti from "./Confetti";
+
 //#region data
-const data = "The quick brown fox jumps over the lazy dog. This sentence is a classic example used for testing typing speed and accuracy. It contains all the letters of the alphabet, allowing typists to practice their skills across the entire keyboard. As you embark on this typing test, remember to strike a balance between speed and precision. Focus on hitting the keys with accuracy and maintaining a steady rhythm. With practice, your typing skills will improve, and you'll be able to effortlessly express your thoughts through the swift strokes of your fingertips."
+const data = "The quick brown fox jumps over the lazy dog."
+
+//"This sentence is a classic example used for testing typing speed and accuracy. It contains all the letters of the alphabet, allowing typists to practice their skills across the entire keyboard. As you embark on this typing test, remember to strike a balance between speed and precision. Focus on hitting the keys with accuracy and maintaining a steady rhythm. With practice, your typing skills will improve, and you'll be able to effortlessly express your thoughts through the swift strokes of your fingertips."
 // "The zoophilous rhizophilic xyloglyphy of the hemidemisemiquaver required an inordinate amount of dexterity and concentration on the QWERTY keyboard."
 //"The unyielding dichlorodifluoromethane permeating the surroundings further exacerbated the challenge, as the mechanical actuation of each arduous key demanded meticulous precision. The pneumonoultramicroscopicsilicovolcanoconiosis-affected fingers trembled, yet the perseverant typist forged ahead, defying the perplexity of their endeavor. Through perseverance and tenacity, the formidable words were triumphantly transcribed, their elusive consonants and vowels elegantly woven into a coherent paragraph despite the labyrinthine constraints of the QWERTY layout.";
 //#endregion
@@ -101,25 +104,7 @@ const Window = () => {
           />
           {isComplete && (
             <>
-              <Confetti
-                width={screen.availWidth - 150}
-                height={screen.availHeight - 150}
-                recycle={false}
-                friction={0.99}
-                wind={0.01}
-                gravity={0.2}
-                numberOfPieces={200}
-                initialVelocityX={30}
-                initialVelocityY={30}
-                tweenDuration={1000}
-                confettiSource={{
-                  x: screen.availWidth / 2,
-                  y: screen.availHeight / 2,
-                  w: 50,
-                  h: 50,
-                }}
-                colors={["#3ddada", "#aaa0aa", "#66d116", "#43ae43"]}
-              />
+              <ShowConfetti />
               <div
                 className="text-2xl font-semibold mt-16 text-slate-400 cursor-pointer"
                 onClick={() => location.reload()}
